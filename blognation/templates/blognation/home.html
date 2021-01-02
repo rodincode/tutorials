@@ -1,0 +1,60 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Soham</title>
+<h1 style="color:rgb(255, 254, 254); text-align: center; text-shadow: 2px 2px grey;">Soham's Website</h1>
+<style>
+p{color:blue; text-align: center;}
+a{color:red;}
+body {background-color: rgb(44, 38, 35);}
+</style>
+<link rel="stylesheet" href="styling.css">
+</head>
+
+<body> 
+    <p> This is a simulation of projectile of a ball thrown from a cliff. </p>
+    <div style="width:500px; margin-left:auto; margin-right:auto;">
+        <img src="https://cdn.pixabay.com/photo/2016/05/24/16/48/mountains-1412683__340.png" width="500" height="500" style="position:absolute;">
+        <canvas id="theCanvas" style=" width:"500"; height:"500"; position:relative;">Ready for some animation.</canvas>
+    </div>
+    <script>
+        // Write or Adjust your JavaScript code here.
+      var theCanvas = document.getElementById("theCanvas");
+      var theContext = theCanvas.getContext("2d");
+      var xo = 100;
+      var yo = 50;
+      var ay = 9.81;
+      var dt = 0.2;
+      var t = 0;
+      var vel = 45;
+      var angle = 45;
+      var vx = vel*MATH.cos(angle);
+      var vy = vel.MATH.sin(angle);
+      var x = xo;
+      var y = yo;
+      move();
+      function projectile() {
+                theContext.clearRect(0,0,theCanvas.width, theCanvas.height);
+                thrContext.beginPath();
+                theContext.arc(x, y, 15, 0, 2*Math.PI);
+                theContext.fillStyle = "purple";
+                theContext.fill();
+      }
+
+      function move() {
+          if (y < 500) {
+    
+          t += dt;
+          x = xo + vx*t;
+          y = yo - vy * t + .5*ay*(t*t);
+          projectile();
+          window.setTimeout(move ,1000/30);
+          }
+      }
+
+      
+      </script>
+
+</body>
+</html>
